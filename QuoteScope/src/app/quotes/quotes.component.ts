@@ -9,6 +9,7 @@ import { Quote } from '/home/venesa/Documents/school_projects/CORE/QuoteScope/Qu
 export class QuotesComponent implements OnInit {
 
   title = 'QuoteScope';
+
   quotes:Quote[] = [
     new Quote (1,'Alice',' Hardships','Never a Rose without Thorns','Uknown', new Date(2022,7,12),0,0),
     new Quote (2,'Ali','Programming','Computers are fast, programmers keep it slow.','ElyeProj',new Date(2022,7,14),0,0),
@@ -20,7 +21,7 @@ export class QuotesComponent implements OnInit {
     new Quote (8,'Hellen','Awareness','The important thing to remember is not to forget.','Benny Bellamacina',new Date(2022,7,15),0,0)
   ]; 
 
-  //sorting object array by date property
+  //sorting object array by date property function
 
   get sortQuotes() {
     return this.quotes.sort((a, b) => {
@@ -56,7 +57,7 @@ export class QuotesComponent implements OnInit {
   constructor() { }  
 
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
