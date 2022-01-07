@@ -19,6 +19,14 @@ export class QuotesComponent implements OnInit {
     new Quote (8,'Hellen','Awareness','The important thing to remember is not to forget.','Benny Bellamacina',new Date(2022,7,15),0,0)
   ]; 
 
+  addedQuote(quote: { id: number; completeDate: string | number | Date; }){
+    let arraysize = this.quotes.length;
+    quote.id = arraysize+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
+  
+
   constructor() { }
 
   ngOnInit(): void {
