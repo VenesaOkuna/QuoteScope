@@ -1,0 +1,27 @@
+.form-control{
+    color: white;
+    background: transparent;
+    font-weight: 570;
+  }
+  label{
+    color: white;
+    font-weight: 600;
+  }
+  hr{
+    width: 50%;
+    height: 2px;
+    background-color: green;
+  }
+  .heading{
+    color: white;
+    text-align: center;
+    padding-top: 2%;
+  }
+  .container-fluid{
+    background-color: rgba(0, 0, 0, 0.374);
+    border-radius: 4px;
+    padding-bottom: 5%;
+    box-shadow: 2px 2px 3px 2px black;
+    font-family: 'Architects Daughter', cursive;
+    margin-bottom: 5%;
+  }
