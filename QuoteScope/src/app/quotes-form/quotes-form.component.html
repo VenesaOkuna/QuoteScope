@@ -1,1 +1,24 @@
-<p>quotes-form works!</p>
+<div class="container-fluid">
+    <h2 class="heading">Add Quote</h2>
+
+
+    <form (ngSubmit)='addQuote() ;quotesForm.resetForm({})' #quotesForm='ngForm'>
+
+        <!-- name -->
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" required class="form-control" id="name" [(ngModel)]="quoted.name" name="name" #name='ngModel' minlength="3">
+            <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+             Name is required.
+        </div>
+
+        <!-- name length alert -->
+        <div *ngIf="name.errors.minlength">
+            Should be at least 3 characters long.
+        </div>
+
+        
+
+
+    </form>
