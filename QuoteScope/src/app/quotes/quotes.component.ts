@@ -27,7 +27,7 @@ export class QuotesComponent implements OnInit {
   }
 
   // quote deletion
-  
+
   quoteDelete(isRead: any, index: number){
     if (isRead) {
       let toDelete = confirm(`Delete this Quote?`)
@@ -38,6 +38,11 @@ export class QuotesComponent implements OnInit {
     }
   }
  
+  // display
+
+  displayInfo(index: string | number){
+    this.quotes[index].showInfo = !this.quotes[index].showInfo;
+  }
 
   constructor() { }  
 
