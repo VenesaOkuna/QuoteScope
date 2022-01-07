@@ -11,14 +11,30 @@
             <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
             <div *ngIf="name.errors.required">
              Name is required.
+            </div>
         </div>
 
-        <!-- name length alert -->
-        <div *ngIf="name.errors.minlength">
+           <!-- name length alert -->
+           <div *ngIf="name.errors.minlength">
             Should be at least 3 characters long.
-        </div>
+           </div>
+        </div> 
 
-        
+        <!-- Quote title -->
+        <div class="form-group">
+            <label for="name">Quote Tittle</label>
+            <input type="text" required class="form-control" id="title" [(ngModel)]="quoted.title" name="title" #title='ngModel'>
+
+            <!-- Quote title alert -->
+            <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
+            <div *ngIf="title.errors.required">
+            Title is required.
+            </div>
+            </div>
+        </div> 
+    
+
+
 
 
     </form>
