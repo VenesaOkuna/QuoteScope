@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Arvo:wght@700&family=Licorice&family=Shadows+Into+Light&display=swap');
+
+
+
+.herotextA {
+  color: #320064;
+  position: absolute;
+  left: 4.2em;
+  top: 2em;
+}
+
+.herotextB {
+    color: #740094;
+    position: absolute;
+    left: 7.2em;
+    top: 2em;
+}
+
+.heromessage {
+  font-size: 55px;
+    position: absolute;
+    left: 15em ;
+    top: 4em;
+    text-align: center;
+    font-size: 22px;
+    width: 30em;
+    text-shadow: 18px;
+}

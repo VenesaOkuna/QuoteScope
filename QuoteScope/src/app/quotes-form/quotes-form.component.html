@@ -1,70 +1,48 @@
+
 <div class="container-fluid">
-    <h2 class="heading">Add Quote</h2>
-
-
-    <form (ngSubmit)='addQuote() ;quotesForm.resetForm({})' #quotesForm='ngForm'>
-
-        <!-- name -->
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" required class="form-control" id="name" [(ngModel)]="quoted.name" name="name" #name='ngModel' minlength="3">
-            <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
-            <div *ngIf="name.errors.required">
-             Name is required.
-            </div>
+    <h2 class="main-heading" style="color: #320064;">Add<span class="title2" style="color: #740094;">Quote</span></h2>
+    <form (ngSubmit)="submitQuote(); quoteForm.resetForm()" #quoteForm='ngForm'>
+  
+      <div class="form-group">
+        <label class="form-labels" for="personSubmitting">Name</label>
+        <input type="text" id="personSubmitting" class="form-control" [(ngModel)]="newQuote.personSubmitting"
+          name="personSubmitting" #personSubmitting="ngModel" required>
+        <div [hidden]="personSubmitting.valid || personSubmitting.pristine" class="text-danger">
+          <p>*required!</p>
         </div>
-
-           <!-- name length alert -->
-           <div *ngIf="name.errors.minlength">
-            Should be at least 3 characters long.
-           </div>
-        </div> 
-
-        <!-- Quote title -->
-        <div class="form-group">
-            <label for="name">Quote Tittle</label>
-            <input type="text" required class="form-control" id="title" [(ngModel)]="quoted.title" name="title" #title='ngModel'>
-
-            <!-- Quote title alert -->
-            <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-            <div *ngIf="title.errors.required">
-            Title is required.
-            </div>
-            </div>
-        </div> 
-
-        <!-- Actual Quote -->
-        <div class="form-group">
-            <label for="description">Quote</label>
-            <textarea class="form-control" id="quote" rows="2" required [(ngModel)]="quoted.quote" name="quote" #quote='ngModel'></textarea>
-
-            <!-- Quote errors alert -->
-            <div *ngIf="quote.invalid && quote.dirty" class="alert alert-danger">
-              <div *ngIf="quote.errors.required">
-                  No Quote Detected.
-              </div>
-            </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="form-labels" for="">Quote Title</label>
+        <input type="text" id="" class="form-control" [(ngModel)]="newQuote.name" name="name" #name="ngModel" required>
+        <div [hidden]="name.valid || name.pristine" class="text-danger">
+          <p>*required!</p>
         </div>
-
-        <!-- Author name input  -->
-        <div class="form-group">
-            <label for="name">Quote Author</label>
-            <input type="text" required class="form-control" id="author"[(ngModel)]="quoted.author" name="author" #author='ngModel'>
-
-            <!-- Author name alert -->
-            <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
-              <div *ngIf="title.errors.required">
-                  Author Name is required.
-              </div>
-            </div>
+  
+      </div>
+  
+      <div class="form-group">
+        <label class="form-labels" for="">Quote</label>
+        <input type="text" id="" class="form-control" [(ngModel)]="newQuote.description" name="description"
+          #description="ngModel" required>
+        <div [hidden]="description.valid || description.pristine" class="text-danger">
+          <p>*required!</p>
         </div>
-
-        <!-- New Quote button -->
-        <button type="submit" class="btn btn-sm btn-success">Add Quote</button>
-    
-
-
-
-
+  
+      </div>
+  
+      <div class="form-group">
+        <label class="form-labels" for="">Author</label>
+        <input type="text" id="" class="form-control" [(ngModel)]="newQuote.author" name="author" #author="ngModel"
+          required>
+        <div [hidden]="author.valid || author.pristine" class="text-danger">
+          <p>*required!</p>
+        </div>
+  
+      </div>
+  
+      <div class="text-center">
+        <button type="submit" [disabled]="!quoteForm.valid" class="btn btn-success m-4 " style="border: 3px outset rgb(255, 212, 246); background-color: transparent; color: #740094;">push Quote</button>
+      </div>
     </form>
-</div>
+  </div>

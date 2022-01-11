@@ -1,0 +1,28 @@
+main {
+    overflow-x: hidden;
+  }
+  
+  #backgroundimage {
+    background-image: url("../assets/bwshrubs.jpg");
+    background-position: center;
+    height: 70vh;
+    background-size: cover;
+  }
+  
+  .bg-text {
+    color: white;
+    position: relative;
+    top: 20%
+  }
+  
+  .homelinks {
+    margin: auto;
+  }
+  
+  footer {
+    color: white;
+  }
+  
+  a {
+    text-decoration: none;
+  }

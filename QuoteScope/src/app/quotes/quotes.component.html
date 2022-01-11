@@ -1,2 +1,49 @@
-<router-outlet></router-outlet>
-<app-quotes></app-quotes>
+<div class="row">
+
+    <!-- push quote from form to quotes card -->
+    <div class="col-md-5">
+      <app-quotes-form (addQuote)="addQuote($event)"></app-quotes-form>
+    </div>
+  
+  <!-- outline quotes -->
+    <div class="col-md-6" >
+      <div *ngFor='let quote of quotes;let i = index'>
+        
+        
+        <div class="card mb-5 mt-5 mr-5 ml-5" style="border: 1px solid #740094;">
+
+          <!-- quote name -->
+          <div class="quoteName">
+            <div class="card-header mt-5" style="background-color: rgb(255, 212, 246);">
+              <li appHighlight *ngIf="highestVotes()===quote.upVote && quote.upVote>0" style="color:  #320064; font-family: 'Arvo', serif; font-size: 45px;"> {{quote.name}}</li>
+              <li *ngIf="highestVotes() !== quote.upVote || quote.upVote ===0" style="color: #320064; font-family: 'Arvo', serif;">   {{quote.name}}</li>
+            </div>
+
+            <!-- details button -->
+            <button class="btn btn-light btn-sm mx-5 btnright" style="border: 2px outset rgb(255, 212, 246); position: absolute; right: 5%; top: 2%; color: #740094; background-color: transparent;" (click)="showMore(i)">details</button>
+            <div class="card-body">
+              
+              <!-- quote and name of submitter -->
+              <blockquote class="blockquote mb-0">
+                <p style="color: #740094; font-family: 'Amatic SC', cursive; font-size: 30px;"> "{{quote.description}}"</p>
+                <footer class="blockquote-footer">posted by : <p title="Source Title">{{quote.personSubmitting}}</p>
+                </footer>
+              </blockquote>
+            </div>
+            
+            <!-- like and dislike buttons -->
+            <button class="like" style="border: 2px outset rgb(255, 212, 246); color: #740094; background-color: transparent;" (click)=upVote(i)>like</button>{{quote.upVote}}
+            <button class="like" style="border: 2px outset rgb(255, 212, 246); color: #740094; background-color: transparent;" (click)=downVote(i)>dislike</button>{{quote.downVote}}
+
+
+          </div>
+
+
+           <!-- delete quote button -->
+          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote' (isComplete)='deleteQuotes($event,i)'>
+          </app-quote-detail>
+        </div>
+      </div>
+    </div>
+  
+  </div>

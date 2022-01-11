@@ -1,4 +1,4 @@
-import { Quote } from '/home/venesa/Documents/school_projects/CORE/QuoteScope/QuoteScope/src/app/quote';
+import { Quote } from './quote';
 
 describe('Quote', () => {
   it('should create an instance', () => {

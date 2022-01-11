@@ -1,27 +1,25 @@
-.form-control{
-    color: white;
-    background: transparent;
-    font-weight: 570;
-  }
-  label{
-    color: white;
-    font-weight: 600;
-  }
-  hr{
-    width: 50%;
-    height: 2px;
-    background-color: green;
-  }
-  .heading{
-    color: white;
+.main-heading {
+    font-family: sans-serif;
+    font-weight: bold;
     text-align: center;
-    padding-top: 2%;
+    margin-bottom: 0em;
   }
-  .container-fluid{
-    background-color: rgba(0, 0, 0, 0.374);
-    border-radius: 4px;
-    padding-bottom: 5%;
-    box-shadow: 2px 2px 3px 2px black;
-    font-family: 'Architects Daughter', cursive;
-    margin-bottom: 5%;
+  
+  .form-labels {
+    font-family: 'Arvo', serif; font-size: 25px;
+    text-align: left;
+    color: #320064;
+    font-size: 15px;
+    position: relative;
+    left: 0em;
+    background-color: rgb(255, 212, 246);
+    width: 100%;
   }
+  
+  form {
+
+    background-position: center;
+    background-size: cover;
+    padding: 3em;
+  }
+  
